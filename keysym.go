@@ -52,6 +52,10 @@ const (
 	xkAudioLowerVolume = 0x1008ff11
 	xkAudioMute        = 0x1008ff12
 	xkAudioRaiseVolume = 0x1008ff13
+
+	// These are F11 and F12 on the Lenovo Thinkpad x1 Carbon v2.
+	xkXF86LaunchA  = 0x1008ff4a
+	xkXF86Explorer = 0x1008ff5d
 )
 
 func keysymString(keysym xp.Keysym) string {

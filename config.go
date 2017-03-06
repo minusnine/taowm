@@ -10,7 +10,7 @@ const (
 	// wmKeysym is the key to trigger taowm actions. For other possible
 	// values, such as xkSuperL for the 'Windows' key that is typically
 	// between the left Control and Alt keys, see keysym.go.
-	wmKeysym = xkCapsLock
+	wmKeysym = xkAltL
 
 	// colorXxx are taowm's text and border colors. We assume 24-bit RGB.
 	colorBaseUnfocused  = 0x1f3f1f
@@ -72,7 +72,7 @@ var actions = map[int32]struct {
 	+' ':      {doExec, []string{"google-chrome"}},
 	^' ':      {doExec, []string{"google-chrome", "--incognito"}},
 	^'|':      {doExec, []string{"gnome-screensaver-command", "-l"}},
-	+xkReturn: {doExec, []string{"gnome-terminal"}},
+	+xkReturn: {doExec, []string{"gnome-terminal", "--hide-menubar"}},
 	^xkReturn: {doExec, []string{"dmenu_run", "-nb", "#0f0f0f", "-nf", "#3f7f3f",
 		"-sb", "#0f0f0f", "-sf", "#7fff7f", "-l", "10"}},
 
@@ -171,6 +171,9 @@ var actions = map[int32]struct {
 	+'z': {doProgramAction, paZoomIn},
 	^'Z': {doProgramAction, paZoomReset},
 	+'x': {doProgramAction, paZoomOut},
+
+	+xkXF86LaunchA:  {doExec, []string{"xrandr", "--output DP1", "--auto", "--left-of", "eDP1"}},
+	+xkXF86Explorer: {doExec, []string{"xrandr", "--output DP1", "--off"}},
 }
 
 // programAction is an action for a particular program to invoke, as opposed

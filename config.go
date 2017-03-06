@@ -172,8 +172,8 @@ var actions = map[int32]struct {
 	^'Z': {doProgramAction, paZoomReset},
 	+'x': {doProgramAction, paZoomOut},
 
-	+xkXF86LaunchA:  {doExec, []string{"xrandr", "--output DP1", "--auto", "--left-of", "eDP1"}},
-	+xkXF86Explorer: {doExec, []string{"xrandr", "--output DP1", "--off"}},
+	+xkXF86LaunchA:  {doExec, []string{"xrandr", "--output", "DP1", "--auto", "--left-of", "eDP1"}},
+	+xkXF86Explorer: {doExec, []string{"xrandr", "--output", "DP1", "--off"}},
 }
 
 // programAction is an action for a particular program to invoke, as opposed

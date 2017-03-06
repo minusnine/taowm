@@ -54,6 +54,21 @@ const (
 	xkAudioRaiseVolume = 0x1008ff13
 
 	// These are F11 and F12 on the Lenovo Thinkpad x1 Carbon v2.
+	//
+	// KeyPress event, serial 31, synthetic NO, window 0x1c00001,
+	//     root 0xc9, subw 0x0, time 32181325, (821,682), root:(823,684),
+	//     state 0x0, keycode 128 (keysym 0x1008ff4a, XF86LaunchA), same_screen YES,
+	//     XLookupString gives 0 bytes:
+	//     XmbLookupString gives 0 bytes:
+	//     XFilterEvent returns: False
+	//
+	// KeyPress event, serial 32, synthetic NO, window 0x1c00001,
+	//     root 0xc9, subw 0x0, time 32181600, (821,682), root:(823,684),
+	//     state 0x0, keycode 152 (keysym 0x1008ff5d, XF86Explorer), same_screen YES,
+	//     XLookupString gives 0 bytes:
+	//     XmbLookupString gives 0 bytes:
+	//     XFilterEvent returns: False
+	//
 	xkXF86LaunchA  = 0x1008ff4a
 	xkXF86Explorer = 0x1008ff5d
 )

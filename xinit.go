@@ -180,6 +180,9 @@ func initKeyboardMapping() {
 	if doAudioActions {
 		toGrabs = append(toGrabs, xkAudioLowerVolume, xkAudioMute, xkAudioRaiseVolume)
 	}
+	// Grab keys for xrandr.
+	// TODO(minusnine): implement proper support for xrandr.
+	toGrabs = append(toGrabs, xkXF86LaunchA, xkXF86Explorer)
 	for _, toGrab := range toGrabs {
 		keycode := xp.Keycode(0)
 		for i := keyLo; i <= keyHi; i++ {

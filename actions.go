@@ -19,7 +19,10 @@ func doExec(_ *workspace, cmd1 interface{}) bool {
 		return false
 	}
 	go func() {
+		log.Printf("Executing command: %+v", cmd)
 		c := exec.Command(cmd[0], cmd[1:]...)
+		c.Stderr = os.Stderr
+		c.Stdout = os.Stdout
 		if err := c.Start(); err != nil {
 			log.Printf("could not start command %q: %v", cmd, err)
 		}
